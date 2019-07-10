@@ -26,12 +26,16 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(),
   },
+  
   title: {
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
+    },
+    margin:{
+      marginLeft: '10px',
     },
   },
   search: {
@@ -42,7 +46,7 @@ const useStyles = makeStyles(theme => ({
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     marginRight: theme.spacing(2),
-    marginLeft: 0,
+    marginLeft: 2,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(3),
@@ -81,6 +85,7 @@ const useStyles = makeStyles(theme => ({
       display: 'none',
     
   },
+  
 }
 }));
 
@@ -248,7 +253,8 @@ function OutlinedTextFields() {
   }
 
   return (
-    <form className={classes.container} noValidate autoComplete="off">
+    <form className={classes.container } style={{marginLeft:'40px'}} noValidate autoComplete="off">
+     
       <TextField
         id="outlined-Name"
         label="Name"
@@ -305,7 +311,7 @@ function ContainedButtons() {
   const classes = useStyles();
 
   return (
-    <div>
+    <div style={{marginLeft:'40px'}}>
       
       
       <Button variant="contained" color="primary" className={classes.button}>
