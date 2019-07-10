@@ -17,6 +17,9 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import Button from '@material-ui/core/Button';
+
+
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -76,8 +79,9 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     [theme.breakpoints.up('md')]: {
       display: 'none',
-    },
+    
   },
+}
 }));
 
  function PrimarySearchAppBar() {
@@ -246,14 +250,15 @@ function OutlinedTextFields() {
   return (
     <form className={classes.container} noValidate autoComplete="off">
       <TextField
-        id="outlined-name"
+        id="outlined-Name"
         label="Name"
         className={classes.textField}
         value={values.name}
         onChange={handleChange('name')}
         margin="normal"
         variant="outlined"
-      /><br/>
+      />
+       &nbsp;&nbsp;&nbsp;
       <TextField
         id="outlined-RegNo"
         label="RegNo"
@@ -269,7 +274,8 @@ function OutlinedTextFields() {
         value={values.MembershipNumber}
         margin="normal"
         variant="outlined"
-      /><br/>
+      />
+       &nbsp;&nbsp;&nbsp;
       <TextField
 
         id="outlined-Location"
@@ -295,7 +301,27 @@ function OutlinedTextFields() {
     </form>
   );
 }
+function ContainedButtons() {
+  const classes = useStyles();
 
+  return (
+    <div>
+      
+      
+      <Button variant="contained" color="primary" className={classes.button}>
+        Submit
+      </Button>
+      &nbsp;&nbsp;&nbsp;
+      <Button variant="contained" color="secondary" className={classes.button}>
+        Cancel
+      </Button>
+      
+      
+     
+      
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -303,6 +329,7 @@ function App() {
 <header><PrimarySearchAppBar/></header>
 
       <OutlinedTextFields />
+      <ContainedButtons/>
     </div>
   );
 }
